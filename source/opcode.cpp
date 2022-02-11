@@ -771,6 +771,7 @@ bool spvOpcodeIsBit(spv::Op opcode) {
       return false;
   }
 }
+
 //+WELDER
 spv_result_t spvGetOpcodeNames(spv_target_env env, spv_opcodes_t* opCodes) {
   spv_opcode_table table;

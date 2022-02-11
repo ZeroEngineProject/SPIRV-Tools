@@ -903,7 +903,7 @@ SPIRV_TOOLS_EXPORT spv_result_t spvBinaryParse(
 //+WELDER
 // Declaration of the C-API for the optimizer.
 SPIRV_TOOLS_EXPORT spv_result_t spvOptimizeWithOptions(
-    const spv_const_context context, const spv_const_optimizer_options options,
+    const spv_const_context context, const spv_optimizer_options options,
     const spv_const_binary binary, spv_binary* binaryOut,
     spv_diagnostic* diagnostic);
 

@@ -36,14 +36,9 @@ struct spv_optimizer_options_t {
         val_options_(),
         max_id_bound_(kDefaultMaxIdBound),
         preserve_bindings_(false),
-        preserve_spec_constants_(false) {}
-
-  //+WELDER
-  // Assumed to be filled out and owned by the client.
-  // Client is also responsible for freeing memory.
-  spv_optimizer_passes_t passes_ = SPV_OPTIMIZER_SIZE_PASS;
-  char** flags_ = nullptr;
-  //-WELDER
+        preserve_spec_constants_(false),
+        flags_(nullptr),
+        passes_(SPV_OPTIMIZER_SIZE_PASS){}
 
   // When true the validator will be run before optimizations are run.
   bool run_validator_;
@@ -62,5 +57,10 @@ struct spv_optimizer_options_t {
   // When true, all specialization constants within the module should be
   // preserved.
   bool preserve_spec_constants_;
+  
+  // Zero Edit: Assumed to be filled out and owned by the client.\
+  // Client is also responsible for freeing memory.
+  spv_optimizer_passes_t passes_;
+  char** flags_;
 };
 #endif  // SOURCE_SPIRV_OPTIMIZER_OPTIONS_H_
